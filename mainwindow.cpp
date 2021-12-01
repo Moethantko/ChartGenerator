@@ -22,7 +22,7 @@ void MainWindow::on_comBoxItems_currentTextChanged(const QString &arg1)
     QTextEdit *test = new QTextEdit();
     test->resize(121, 31);
 
-    setCentralWidget(test);
+    //setCentralWidget(test);
 
 
 }
