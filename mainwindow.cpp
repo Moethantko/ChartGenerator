@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    items = new QVector<QTextEdit*>;
 
     QBarSet *set0 = new QBarSet("Jane");
     QBarSet *set1 = new QBarSet("John");
@@ -69,7 +70,7 @@ void MainWindow::on_comBoxItems_currentTextChanged(const QString &arg1)
     //const QRect layoutSize(200, 250, 1000, 1000);
     //vLayout->setGeometry(layoutSize);
 
-    QVector<QTextEdit*> items;
+
 
     int yAxisPos = 300;
     int YAxisIncrement = 150;
@@ -78,9 +79,13 @@ void MainWindow::on_comBoxItems_currentTextChanged(const QString &arg1)
 
     for (int i = 0; i < num; i++) {
         QTextEdit test;
-        test.setGeometry(yAxisPos, 220, 121, 31);
+        test.setGeometry(200, yAxisPos, 121, 31);
         items.push_back(&test);
         yAxisPos = yAxisPos +YAxisIncrement;
+    }
+
+    for (int i = 0; i < num; i++) {
+        ui->vLayoutItems->addWidget(items[0]);
     }
 
     //setCentralWidget(test);
